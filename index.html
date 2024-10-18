@@ -143,6 +143,64 @@
 
         }
 
+        .floating-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(52, 52, 52, 0.5);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 15px 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+            box-sizing: border-box;
+
+        }
+        .floating-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        .floating-nav li {
+            margin: 0 5px;
+        }
+        .floating-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: background-color 0.3s, font-size 0.3s;
+            white-space: nowrap;
+        }
+        .floating-nav a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color:black;
+        }
+        @media (max-width: 768px) {
+            .floating-nav {
+                padding: 10px 15px 12px 15px;
+            }
+            .floating-nav a {
+                font-size: 12px;
+                padding: 6px;
+            }
+        }
+        @media (max-width: 480px) {
+            .floating-nav {
+                padding: 5px 7px 10px 7px;
+                /* max-width: 70%; */
+            }
+            .floating-nav a {
+                font-size: 8px;
+                padding: 1px 4px 2px 3px;
+            }
+        }
+
         @media screen and (max-width: 768px) {
             .container {
                 width: 100%;
@@ -154,13 +212,17 @@
             width: 80%;
             max-width: 700px;
         }
+        #moveToTopBtn{
+            bottom: 60px;
+            right: 10px;
+        }
         }
     </style>
 </head>
 <body>
     <button onclick="topFunction()" id="moveToTopBtn" title="Go to top">👆</button>
     <center><h1>Design Portfolio</h1></center>
-
+    
     <div class="floating-logos">
         <img src="adobexd.png" alt="Figma">
         <img src="photoshop.png" alt="Photoshop">
@@ -169,7 +231,12 @@
         <img src="premiere.png" alt="Illustrator">
         <img src="figma.png" alt="Illustrator">
     </div>
-
+    <footer>
+        <center>
+            👉<a href="https://hack.aashutoshkattel.com.np" style = "text-decoration: none;"> 🔗 Aashutosh Kattel </a> 👈
+        </center>
+    </footer>
+    
     <div class="portfolio">
         <div class="container">
             <img src="d1.jpg" alt="Design 1">
@@ -361,11 +428,16 @@
         <img class="modal-content" id="modalImg">
     </div>
 
-    <footer>
-        <center>
-            👉<a href="https://hack.aashutoshkattel.com.np">Aashutosh Kattel</a>👈
-        </center>
-    </footer>
+    <nav class="floating-nav">
+        <ul>
+            <li><a href="#">Graphics</a></li>
+            <li><a href="#">UIUX</a></li>
+            <li><a href="#">Motion Graphics</a></li>
+            <li><a href="#">Video Editing</a></li>
+            <li><a href="static/Aashutosh_Graphics_VideoE.pdf" download>Download CV</a></li>      
+          </ul>
+    </nav>
+
 
     <script>
         const modal = document.getElementById("myModal");
